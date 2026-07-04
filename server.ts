@@ -141,7 +141,7 @@ async function startServer() {
       }
 
       const response = await ai.models.generateContent({
-        model: "gemini-1.5-flash",
+        model: "gemini-2.5-flash",
         contents,
         config: {
           systemInstruction: `You are the AI voice agronomist and receptionist for 'AgriCa' (አግሪካ), an AI-powered agriculture platform for Africa starting with Ethiopia.

@@ -15,8 +15,8 @@ interface StagedListing {
   harvestDate?: string;
 }
 
-const THRESHOLD = 6; // Volume threshold for VAD (0-255)
-const SILENCE_DURATION = 800; // 0.8 seconds of silence to trigger end
+const THRESHOLD = 5; // Volume threshold for VAD (0-255)
+const SILENCE_DURATION = 1200; // 1.2 seconds of silence to trigger end
 
 export default function App() {
   const [callStatus, setCallStatus] = useState<'idle' | 'calling' | 'connected'>('idle');
@@ -173,7 +173,7 @@ export default function App() {
       for (let i = 0; i < dataArray.length; i++) sum += dataArray[i];
       let average = sum / dataArray.length;
       
-      const currentThreshold = isSpeakingRef.current ? THRESHOLD + 2 : THRESHOLD;
+      const currentThreshold = isSpeakingRef.current ? THRESHOLD + 1 : THRESHOLD;
       if (average > currentThreshold && !isMutedRef.current) {
         if (silenceTimer) {
           clearTimeout(silenceTimer);
