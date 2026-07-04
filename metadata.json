@@ -1,0 +1,6 @@
+{
+  "name": "AgriCa Voice Agent",
+  "description": "An Amharic farming voice agent for the AgriCa website.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
